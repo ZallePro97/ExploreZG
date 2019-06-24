@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'ExploreZagreb' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ExploreZagreb
+  pod 'PureLayout'
+  pod 'Alamofire'
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'FirebaseStorage', '~> 3.2'
+  pod 'Kingfisher'
+  pod 'ChameleonFramework'
+
+end

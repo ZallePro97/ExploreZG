@@ -7,76 +7,395 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3665F71222C1121C00DE18F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665F71122C1121C00DE18F2 /* AppDelegate.swift */; };
-		3665F71422C1121C00DE18F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665F71322C1121C00DE18F2 /* ViewController.swift */; };
-		3665F71722C1121C00DE18F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3665F71522C1121C00DE18F2 /* Main.storyboard */; };
-		3665F71A22C1121C00DE18F2 /* ExploreZagreb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3665F71822C1121C00DE18F2 /* ExploreZagreb.xcdatamodeld */; };
-		3665F71C22C1121E00DE18F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3665F71B22C1121E00DE18F2 /* Assets.xcassets */; };
-		3665F71F22C1121E00DE18F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3665F71D22C1121E00DE18F2 /* LaunchScreen.storyboard */; };
+		318EEF1D22954D3100CC9E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318EEF1C22954D3100CC9E25 /* AppDelegate.swift */; };
+		318EEF2A22954D3500CC9E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318EEF2822954D3500CC9E25 /* LaunchScreen.storyboard */; };
+		31C3840922AED1320044DE07 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3840822AED1320044DE07 /* AppService.swift */; };
+		31C3840B22AED1BE0044DE07 /* AppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3840A22AED1BE0044DE07 /* AppRoutes.swift */; };
+		31C3841022B05EC00044DE07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3840F22B05EC00044DE07 /* LoginViewController.swift */; };
+		31C3841222B05ECC0044DE07 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841122B05ECC0044DE07 /* RegistrationViewController.swift */; };
+		31C3841422B05EDF0044DE07 /* LoginViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841322B05EDF0044DE07 /* LoginViewController+Layout.swift */; };
+		31C3841622B05EEF0044DE07 /* RegistrationViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841522B05EEF0044DE07 /* RegistrationViewController+Layout.swift */; };
+		31C3841922B0644D0044DE07 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841822B0644D0044DE07 /* InputView.swift */; };
+		31C3841B22B0647E0044DE07 /* InputView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841A22B0647E0044DE07 /* InputView+Layout.swift */; };
+		31C3841F22B0E89C0044DE07 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3841E22B0E89C0044DE07 /* DialogView.swift */; };
+		31C3842122B0E8B70044DE07 /* DialogView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842022B0E8B70044DE07 /* DialogView+Layout.swift */; };
+		31C3842322B0F05A0044DE07 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842222B0F05A0044DE07 /* AppColors.swift */; };
+		31C3842622B100A20044DE07 /* MultiOptionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842522B100A20044DE07 /* MultiOptionalView.swift */; };
+		31C3842822B100B10044DE07 /* MultiOptionalView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842722B100B10044DE07 /* MultiOptionalView+Layout.swift */; };
+		31C3842B22B16BAD0044DE07 /* CreateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842A22B16BAD0044DE07 /* CreateLocationViewController.swift */; };
+		31C3842D22B16BBC0044DE07 /* CreateLocationViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842C22B16BBC0044DE07 /* CreateLocationViewController+Layout.swift */; };
+		31C3843022B1896D0044DE07 /* UIIMage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3842F22B1896D0044DE07 /* UIIMage+Resize.swift */; };
+		31C3843222B196D20044DE07 /* CreateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843122B196D20044DE07 /* CreateRouteViewController.swift */; };
+		31C3843422B196DF0044DE07 /* CreateRouteViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843322B196DF0044DE07 /* CreateRouteViewController+Layout.swift */; };
+		31C3843622B199930044DE07 /* CreateRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843522B199930044DE07 /* CreateRouteModel.swift */; };
+		31C3843922B1A0970044DE07 /* PickLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843822B1A0970044DE07 /* PickLocationsViewController.swift */; };
+		31C3843B22B1A0B20044DE07 /* PickLocationsViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843A22B1A0B20044DE07 /* PickLocationsViewController+Layout.swift */; };
+		31C3843D22B1A2DE0044DE07 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843C22B1A2DE0044DE07 /* LocationTableViewCell.swift */; };
+		31C3843F22B1A2EA0044DE07 /* LocationTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3843E22B1A2EA0044DE07 /* LocationTableViewCell+Layout.swift */; };
+		31C3844222B250450044DE07 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3844122B250450044DE07 /* FavoritesTableViewCell.swift */; };
+		31C3844422B250590044DE07 /* FavoritesTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3844322B250590044DE07 /* FavoritesTableViewCell+Layout.swift */; };
+		31C3844622B2FAC00044DE07 /* CreateCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3844522B2FAC00044DE07 /* CreateCommentModel.swift */; };
+		31C3844822B387D00044DE07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31C3844722B387D00044DE07 /* GoogleService-Info.plist */; };
+		31DA5CBB22A59BD600158706 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA5CBA22A59BD600158706 /* AppRouter.swift */; };
+		31DA5CBD22A59EA200158706 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA5CBC22A59EA200158706 /* ProfileViewController.swift */; };
+		31DA5CC022A59EBC00158706 /* ProfileViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA5CBF22A59EBC00158706 /* ProfileViewController+Layout.swift */; };
+		363664FD22B015BA00C3C1F3 /* PinLocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363664FC22B015BA00C3C1F3 /* PinLocationDetailsViewController.swift */; };
+		3685784822B1BD6C002AB4E6 /* ExploreZagreb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 318EEF2322954D3100CC9E25 /* ExploreZagreb.xcdatamodeld */; };
+		368EAF1D22A50EB300A9A77A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EAF1C22A50EB300A9A77A /* MapViewController.swift */; };
+		368EAF1F22A5134000A9A77A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368EAF1E22A5133F00A9A77A /* Assets.xcassets */; };
+		369ACBDE22A949D600735741 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACBDD22A949D600735741 /* Location.swift */; };
+		36F9EC4022A9C1450054E9BC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F9EC3F22A9C1450054E9BC /* Route.swift */; };
+		52FC521F22A5A3AC000E82A3 /* RouteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC521E22A5A3AC000E82A3 /* RouteListTableViewCell.swift */; };
+		52FC522A22A706E9000E82A3 /* RoutesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC522822A706E9000E82A3 /* RoutesListViewController.swift */; };
+		52FC522B22A706E9000E82A3 /* RoutesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FC522922A706E9000E82A3 /* RoutesListView.xib */; };
+		52FC522F22A7C81E000E82A3 /* RouteDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FC522D22A7C81E000E82A3 /* RouteDetailsView.xib */; };
+		52FC523222A80F5C000E82A3 /* RouteDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC523122A80F5C000E82A3 /* RouteDetailsCell.swift */; };
+		52FC523922A8242C000E82A3 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC523722A8242C000E82A3 /* RouteDetailsViewController.swift */; };
+		52FC523F22AEC784000E82A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC523E22AEC784000E82A3 /* UserModel.swift */; };
+		52FC524122AECFA1000E82A3 /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524022AECFA1000E82A3 /* RouteModel.swift */; };
+		52FC524322AED1D5000E82A3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524222AED1D5000E82A3 /* LocationModel.swift */; };
+		52FC524522AED398000E82A3 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524422AED398000E82A3 /* CommentModel.swift */; };
+		52FC524722AED42F000E82A3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524622AED42F000E82A3 /* CategoryModel.swift */; };
+		52FC524A22AEE466000E82A3 /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524922AEE466000E82A3 /* RouteViewModel.swift */; };
+		52FC524D22B03942000E82A3 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC524C22B03942000E82A3 /* CommentCell.swift */; };
+		790F475801B3744E2DF04DA5 /* Pods_ExploreZagreb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB41BF9F67C1F66DF23E1BF4 /* Pods_ExploreZagreb.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3665F70E22C1121C00DE18F2 /* ExploreZagreb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreZagreb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3665F71122C1121C00DE18F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3665F71322C1121C00DE18F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3665F71622C1121C00DE18F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3665F71922C1121C00DE18F2 /* ExploreZagreb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExploreZagreb.xcdatamodel; sourceTree = "<group>"; };
-		3665F71B22C1121E00DE18F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3665F71E22C1121E00DE18F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3665F72022C1121E00DE18F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		318EEF1922954D3100CC9E25 /* ExploreZagreb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreZagreb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		318EEF1C22954D3100CC9E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		318EEF2422954D3100CC9E25 /* ExploreZagreb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExploreZagreb.xcdatamodel; sourceTree = "<group>"; };
+		318EEF2922954D3500CC9E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31C3840822AED1320044DE07 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		31C3840A22AED1BE0044DE07 /* AppRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoutes.swift; sourceTree = "<group>"; };
+		31C3840F22B05EC00044DE07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		31C3841122B05ECC0044DE07 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		31C3841322B05EDF0044DE07 /* LoginViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Layout.swift"; sourceTree = "<group>"; };
+		31C3841522B05EEF0044DE07 /* RegistrationViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegistrationViewController+Layout.swift"; sourceTree = "<group>"; };
+		31C3841822B0644D0044DE07 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		31C3841A22B0647E0044DE07 /* InputView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputView+Layout.swift"; sourceTree = "<group>"; };
+		31C3841E22B0E89C0044DE07 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		31C3842022B0E8B70044DE07 /* DialogView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DialogView+Layout.swift"; sourceTree = "<group>"; };
+		31C3842222B0F05A0044DE07 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		31C3842522B100A20044DE07 /* MultiOptionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiOptionalView.swift; sourceTree = "<group>"; };
+		31C3842722B100B10044DE07 /* MultiOptionalView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiOptionalView+Layout.swift"; sourceTree = "<group>"; };
+		31C3842A22B16BAD0044DE07 /* CreateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationViewController.swift; sourceTree = "<group>"; };
+		31C3842C22B16BBC0044DE07 /* CreateLocationViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateLocationViewController+Layout.swift"; sourceTree = "<group>"; };
+		31C3842F22B1896D0044DE07 /* UIIMage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMage+Resize.swift"; sourceTree = "<group>"; };
+		31C3843122B196D20044DE07 /* CreateRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteViewController.swift; sourceTree = "<group>"; };
+		31C3843322B196DF0044DE07 /* CreateRouteViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRouteViewController+Layout.swift"; sourceTree = "<group>"; };
+		31C3843522B199930044DE07 /* CreateRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteModel.swift; sourceTree = "<group>"; };
+		31C3843822B1A0970044DE07 /* PickLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationsViewController.swift; sourceTree = "<group>"; };
+		31C3843A22B1A0B20044DE07 /* PickLocationsViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickLocationsViewController+Layout.swift"; sourceTree = "<group>"; };
+		31C3843C22B1A2DE0044DE07 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		31C3843E22B1A2EA0044DE07 /* LocationTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		31C3844122B250450044DE07 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		31C3844322B250590044DE07 /* FavoritesTableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		31C3844522B2FAC00044DE07 /* CreateCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentModel.swift; sourceTree = "<group>"; };
+		31C3844722B387D00044DE07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		31DA5CBA22A59BD600158706 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		31DA5CBC22A59EA200158706 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		31DA5CBF22A59EBC00158706 /* ProfileViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Layout.swift"; sourceTree = "<group>"; };
+		363664FC22B015BA00C3C1F3 /* PinLocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocationDetailsViewController.swift; sourceTree = "<group>"; };
+		368EAF1C22A50EB300A9A77A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		368EAF1E22A5133F00A9A77A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		369ACBDD22A949D600735741 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		36F9EC3F22A9C1450054E9BC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		52FC521E22A5A3AC000E82A3 /* RouteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListTableViewCell.swift; sourceTree = "<group>"; };
+		52FC522822A706E9000E82A3 /* RoutesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesListViewController.swift; sourceTree = "<group>"; };
+		52FC522922A706E9000E82A3 /* RoutesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RoutesListView.xib; path = ../Controller/RoutesListView.xib; sourceTree = "<group>"; };
+		52FC522D22A7C81E000E82A3 /* RouteDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteDetailsView.xib; sourceTree = "<group>"; };
+		52FC523122A80F5C000E82A3 /* RouteDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsCell.swift; sourceTree = "<group>"; };
+		52FC523722A8242C000E82A3 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
+		52FC523E22AEC784000E82A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		52FC524022AECFA1000E82A3 /* RouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
+		52FC524222AED1D5000E82A3 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		52FC524422AED398000E82A3 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		52FC524622AED42F000E82A3 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		52FC524922AEE466000E82A3 /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
+		52FC524C22B03942000E82A3 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		CB41BF9F67C1F66DF23E1BF4 /* Pods_ExploreZagreb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExploreZagreb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC581797676506C46D1FA00 /* Pods-ExploreZagreb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExploreZagreb.debug.xcconfig"; path = "Target Support Files/Pods-ExploreZagreb/Pods-ExploreZagreb.debug.xcconfig"; sourceTree = "<group>"; };
+		F1A382B66BA47EC09940A9D1 /* Pods-ExploreZagreb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExploreZagreb.release.xcconfig"; path = "Target Support Files/Pods-ExploreZagreb/Pods-ExploreZagreb.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3665F70B22C1121C00DE18F2 /* Frameworks */ = {
+		318EEF1622954D3100CC9E25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790F475801B3744E2DF04DA5 /* Pods_ExploreZagreb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3665F70522C1121C00DE18F2 = {
+		318EEF1022954D3100CC9E25 = {
 			isa = PBXGroup;
 			children = (
-				3665F71022C1121C00DE18F2 /* ExploreZagreb */,
-				3665F70F22C1121C00DE18F2 /* Products */,
+				318EEF1B22954D3100CC9E25 /* ExploreZagreb */,
+				318EEF1A22954D3100CC9E25 /* Products */,
+				7155D712986048DD7A322FC5 /* Pods */,
+				BA17116D92B38084C0943E2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		3665F70F22C1121C00DE18F2 /* Products */ = {
+		318EEF1A22954D3100CC9E25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3665F70E22C1121C00DE18F2 /* ExploreZagreb.app */,
+				318EEF1922954D3100CC9E25 /* ExploreZagreb.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3665F71022C1121C00DE18F2 /* ExploreZagreb */ = {
+		318EEF1B22954D3100CC9E25 /* ExploreZagreb */ = {
 			isa = PBXGroup;
 			children = (
-				3665F71122C1121C00DE18F2 /* AppDelegate.swift */,
-				3665F71322C1121C00DE18F2 /* ViewController.swift */,
-				3665F71522C1121C00DE18F2 /* Main.storyboard */,
-				3665F71B22C1121E00DE18F2 /* Assets.xcassets */,
-				3665F71D22C1121E00DE18F2 /* LaunchScreen.storyboard */,
-				3665F72022C1121E00DE18F2 /* Info.plist */,
-				3665F71822C1121C00DE18F2 /* ExploreZagreb.xcdatamodeld */,
+				31C3842E22B1895D0044DE07 /* Extensions */,
+				31DA5CB922A59BC000158706 /* App */,
+				368EAF1E22A5133F00A9A77A /* Assets.xcassets */,
+				368EAF1B22A50BE300A9A77A /* Model */,
+				368EAF1A22A50BDE00A9A77A /* View */,
+				368EAF1922A50BD300A9A77A /* Controller */,
+				318EEF2822954D3500CC9E25 /* LaunchScreen.storyboard */,
+				31C3844722B387D00044DE07 /* GoogleService-Info.plist */,
+				318EEF2322954D3100CC9E25 /* ExploreZagreb.xcdatamodeld */,
 			);
 			path = ExploreZagreb;
+			sourceTree = "<group>";
+		};
+		31C3840E22B05EA60044DE07 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				31C3841D22B0E8860044DE07 /* DialogView */,
+				31C3841C22B0E8710044DE07 /* InputView */,
+				31C3840F22B05EC00044DE07 /* LoginViewController.swift */,
+				31C3841322B05EDF0044DE07 /* LoginViewController+Layout.swift */,
+				31C3841122B05ECC0044DE07 /* RegistrationViewController.swift */,
+				31C3841522B05EEF0044DE07 /* RegistrationViewController+Layout.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		31C3841C22B0E8710044DE07 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				31C3841822B0644D0044DE07 /* InputView.swift */,
+				31C3841A22B0647E0044DE07 /* InputView+Layout.swift */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		31C3841D22B0E8860044DE07 /* DialogView */ = {
+			isa = PBXGroup;
+			children = (
+				31C3841E22B0E89C0044DE07 /* DialogView.swift */,
+				31C3842022B0E8B70044DE07 /* DialogView+Layout.swift */,
+			);
+			path = DialogView;
+			sourceTree = "<group>";
+		};
+		31C3842422B100870044DE07 /* MultiOptionalView */ = {
+			isa = PBXGroup;
+			children = (
+				31C3842522B100A20044DE07 /* MultiOptionalView.swift */,
+				31C3842722B100B10044DE07 /* MultiOptionalView+Layout.swift */,
+			);
+			path = MultiOptionalView;
+			sourceTree = "<group>";
+		};
+		31C3842922B16B910044DE07 /* CreateControllers */ = {
+			isa = PBXGroup;
+			children = (
+				31C3843722B1A07B0044DE07 /* PickLocations */,
+				31C3842A22B16BAD0044DE07 /* CreateLocationViewController.swift */,
+				31C3842C22B16BBC0044DE07 /* CreateLocationViewController+Layout.swift */,
+				31C3843122B196D20044DE07 /* CreateRouteViewController.swift */,
+				31C3843322B196DF0044DE07 /* CreateRouteViewController+Layout.swift */,
+			);
+			path = CreateControllers;
+			sourceTree = "<group>";
+		};
+		31C3842E22B1895D0044DE07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31C3842F22B1896D0044DE07 /* UIIMage+Resize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31C3843722B1A07B0044DE07 /* PickLocations */ = {
+			isa = PBXGroup;
+			children = (
+				31C3843822B1A0970044DE07 /* PickLocationsViewController.swift */,
+				31C3843A22B1A0B20044DE07 /* PickLocationsViewController+Layout.swift */,
+				31C3843C22B1A2DE0044DE07 /* LocationTableViewCell.swift */,
+				31C3843E22B1A2EA0044DE07 /* LocationTableViewCell+Layout.swift */,
+			);
+			path = PickLocations;
+			sourceTree = "<group>";
+		};
+		31C3844022B250250044DE07 /* FavoritesCell */ = {
+			isa = PBXGroup;
+			children = (
+				31C3844122B250450044DE07 /* FavoritesTableViewCell.swift */,
+				31C3844322B250590044DE07 /* FavoritesTableViewCell+Layout.swift */,
+			);
+			path = FavoritesCell;
+			sourceTree = "<group>";
+		};
+		31DA5CB922A59BC000158706 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				318EEF1C22954D3100CC9E25 /* AppDelegate.swift */,
+				31DA5CBA22A59BD600158706 /* AppRouter.swift */,
+				31C3840822AED1320044DE07 /* AppService.swift */,
+				31C3840A22AED1BE0044DE07 /* AppRoutes.swift */,
+				31C3842222B0F05A0044DE07 /* AppColors.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		31DA5CBE22A59EA700158706 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				31C3844022B250250044DE07 /* FavoritesCell */,
+				31C3842422B100870044DE07 /* MultiOptionalView */,
+				31DA5CBC22A59EA200158706 /* ProfileViewController.swift */,
+				31DA5CBF22A59EBC00158706 /* ProfileViewController+Layout.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		368EAF1922A50BD300A9A77A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				31C3842922B16B910044DE07 /* CreateControllers */,
+				31C3840E22B05EA60044DE07 /* Authentification */,
+				52FC523B22A928E3000E82A3 /* Routes */,
+				31DA5CBE22A59EA700158706 /* Profile */,
+				52FC523C22A9290C000E82A3 /* Map */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		368EAF1A22A50BDE00A9A77A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52FC522922A706E9000E82A3 /* RoutesListView.xib */,
+				52FC522D22A7C81E000E82A3 /* RouteDetailsView.xib */,
+				52FC524B22B038FF000E82A3 /* CommentCell */,
+				52FC523022A80F10000E82A3 /* RouteDetailsCell */,
+				52FC521D22A5A299000E82A3 /* RouteListCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		368EAF1B22A50BE300A9A77A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52FC524822AEE3FC000E82A3 /* ViewModels */,
+				52FC523D22AEC63A000E82A3 /* DBModels */,
+				369ACBDD22A949D600735741 /* Location.swift */,
+				36F9EC3F22A9C1450054E9BC /* Route.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52FC521D22A5A299000E82A3 /* RouteListCell */ = {
+			isa = PBXGroup;
+			children = (
+				52FC521E22A5A3AC000E82A3 /* RouteListTableViewCell.swift */,
+			);
+			path = RouteListCell;
+			sourceTree = "<group>";
+		};
+		52FC523022A80F10000E82A3 /* RouteDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				52FC523122A80F5C000E82A3 /* RouteDetailsCell.swift */,
+			);
+			path = RouteDetailsCell;
+			sourceTree = "<group>";
+		};
+		52FC523B22A928E3000E82A3 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				52FC523722A8242C000E82A3 /* RouteDetailsViewController.swift */,
+				52FC522822A706E9000E82A3 /* RoutesListViewController.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		52FC523C22A9290C000E82A3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				368EAF1C22A50EB300A9A77A /* MapViewController.swift */,
+				363664FC22B015BA00C3C1F3 /* PinLocationDetailsViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		52FC523D22AEC63A000E82A3 /* DBModels */ = {
+			isa = PBXGroup;
+			children = (
+				52FC523E22AEC784000E82A3 /* UserModel.swift */,
+				52FC524022AECFA1000E82A3 /* RouteModel.swift */,
+				52FC524222AED1D5000E82A3 /* LocationModel.swift */,
+				52FC524622AED42F000E82A3 /* CategoryModel.swift */,
+				52FC524422AED398000E82A3 /* CommentModel.swift */,
+				31C3843522B199930044DE07 /* CreateRouteModel.swift */,
+				31C3844522B2FAC00044DE07 /* CreateCommentModel.swift */,
+			);
+			path = DBModels;
+			sourceTree = "<group>";
+		};
+		52FC524822AEE3FC000E82A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				52FC524922AEE466000E82A3 /* RouteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		52FC524B22B038FF000E82A3 /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				52FC524C22B03942000E82A3 /* CommentCell.swift */,
+			);
+			path = CommentCell;
+			sourceTree = "<group>";
+		};
+		7155D712986048DD7A322FC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDC581797676506C46D1FA00 /* Pods-ExploreZagreb.debug.xcconfig */,
+				F1A382B66BA47EC09940A9D1 /* Pods-ExploreZagreb.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA17116D92B38084C0943E2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB41BF9F67C1F66DF23E1BF4 /* Pods_ExploreZagreb.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3665F70D22C1121C00DE18F2 /* ExploreZagreb */ = {
+		318EEF1822954D3100CC9E25 /* ExploreZagreb */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3665F72322C1121E00DE18F2 /* Build configuration list for PBXNativeTarget "ExploreZagreb" */;
+			buildConfigurationList = 318EEF2E22954D3500CC9E25 /* Build configuration list for PBXNativeTarget "ExploreZagreb" */;
 			buildPhases = (
-				3665F70A22C1121C00DE18F2 /* Sources */,
-				3665F70B22C1121C00DE18F2 /* Frameworks */,
-				3665F70C22C1121C00DE18F2 /* Resources */,
+				48BAD2279D938E7B7E94E954 /* [CP] Check Pods Manifest.lock */,
+				318EEF1522954D3100CC9E25 /* Sources */,
+				318EEF1622954D3100CC9E25 /* Frameworks */,
+				318EEF1722954D3100CC9E25 /* Resources */,
+				94945274567FA0B3E204C1E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -84,25 +403,25 @@
 			);
 			name = ExploreZagreb;
 			productName = ExploreZagreb;
-			productReference = 3665F70E22C1121C00DE18F2 /* ExploreZagreb.app */;
+			productReference = 318EEF1922954D3100CC9E25 /* ExploreZagreb.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3665F70622C1121C00DE18F2 /* Project object */ = {
+		318EEF1122954D3100CC9E25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Zeljko halle";
+				ORGANIZATIONNAME = "Zelena Mrkva";
 				TargetAttributes = {
-					3665F70D22C1121C00DE18F2 = {
-						CreatedOnToolsVersion = 10.1;
+					318EEF1822954D3100CC9E25 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 3665F70922C1121C00DE18F2 /* Build configuration list for PBXProject "ExploreZagreb" */;
+			buildConfigurationList = 318EEF1422954D3100CC9E25 /* Build configuration list for PBXProject "ExploreZagreb" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +429,151 @@
 				en,
 				Base,
 			);
-			mainGroup = 3665F70522C1121C00DE18F2;
-			productRefGroup = 3665F70F22C1121C00DE18F2 /* Products */;
+			mainGroup = 318EEF1022954D3100CC9E25;
+			productRefGroup = 318EEF1A22954D3100CC9E25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3665F70D22C1121C00DE18F2 /* ExploreZagreb */,
+				318EEF1822954D3100CC9E25 /* ExploreZagreb */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3665F70C22C1121C00DE18F2 /* Resources */ = {
+		318EEF1722954D3100CC9E25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3665F71F22C1121E00DE18F2 /* LaunchScreen.storyboard in Resources */,
-				3665F71C22C1121E00DE18F2 /* Assets.xcassets in Resources */,
-				3665F71722C1121C00DE18F2 /* Main.storyboard in Resources */,
+				368EAF1F22A5134000A9A77A /* Assets.xcassets in Resources */,
+				52FC522F22A7C81E000E82A3 /* RouteDetailsView.xib in Resources */,
+				31C3844822B387D00044DE07 /* GoogleService-Info.plist in Resources */,
+				52FC522B22A706E9000E82A3 /* RoutesListView.xib in Resources */,
+				318EEF2A22954D3500CC9E25 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48BAD2279D938E7B7E94E954 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExploreZagreb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94945274567FA0B3E204C1E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExploreZagreb/Pods-ExploreZagreb-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExploreZagreb/Pods-ExploreZagreb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		3665F70A22C1121C00DE18F2 /* Sources */ = {
+		318EEF1522954D3100CC9E25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3665F71A22C1121C00DE18F2 /* ExploreZagreb.xcdatamodeld in Sources */,
-				3665F71422C1121C00DE18F2 /* ViewController.swift in Sources */,
-				3665F71222C1121C00DE18F2 /* AppDelegate.swift in Sources */,
+				31C3841022B05EC00044DE07 /* LoginViewController.swift in Sources */,
+				31C3841922B0644D0044DE07 /* InputView.swift in Sources */,
+				31C3843622B199930044DE07 /* CreateRouteModel.swift in Sources */,
+				52FC523222A80F5C000E82A3 /* RouteDetailsCell.swift in Sources */,
+				3685784822B1BD6C002AB4E6 /* ExploreZagreb.xcdatamodeld in Sources */,
+				31C3842822B100B10044DE07 /* MultiOptionalView+Layout.swift in Sources */,
+				31DA5CC022A59EBC00158706 /* ProfileViewController+Layout.swift in Sources */,
+				31C3841B22B0647E0044DE07 /* InputView+Layout.swift in Sources */,
+				52FC524122AECFA1000E82A3 /* RouteModel.swift in Sources */,
+				52FC524722AED42F000E82A3 /* CategoryModel.swift in Sources */,
+				52FC524D22B03942000E82A3 /* CommentCell.swift in Sources */,
+				31C3841622B05EEF0044DE07 /* RegistrationViewController+Layout.swift in Sources */,
+				318EEF1D22954D3100CC9E25 /* AppDelegate.swift in Sources */,
+				36F9EC4022A9C1450054E9BC /* Route.swift in Sources */,
+				31DA5CBD22A59EA200158706 /* ProfileViewController.swift in Sources */,
+				31C3840B22AED1BE0044DE07 /* AppRoutes.swift in Sources */,
+				52FC523F22AEC784000E82A3 /* UserModel.swift in Sources */,
+				31C3841F22B0E89C0044DE07 /* DialogView.swift in Sources */,
+				31C3842322B0F05A0044DE07 /* AppColors.swift in Sources */,
+				52FC524322AED1D5000E82A3 /* LocationModel.swift in Sources */,
+				31C3843022B1896D0044DE07 /* UIIMage+Resize.swift in Sources */,
+				31C3842D22B16BBC0044DE07 /* CreateLocationViewController+Layout.swift in Sources */,
+				369ACBDE22A949D600735741 /* Location.swift in Sources */,
+				31C3843B22B1A0B20044DE07 /* PickLocationsViewController+Layout.swift in Sources */,
+				363664FD22B015BA00C3C1F3 /* PinLocationDetailsViewController.swift in Sources */,
+				31C3842B22B16BAD0044DE07 /* CreateLocationViewController.swift in Sources */,
+				31C3844222B250450044DE07 /* FavoritesTableViewCell.swift in Sources */,
+				31DA5CBB22A59BD600158706 /* AppRouter.swift in Sources */,
+				31C3841222B05ECC0044DE07 /* RegistrationViewController.swift in Sources */,
+				31C3843422B196DF0044DE07 /* CreateRouteViewController+Layout.swift in Sources */,
+				368EAF1D22A50EB300A9A77A /* MapViewController.swift in Sources */,
+				52FC521F22A5A3AC000E82A3 /* RouteListTableViewCell.swift in Sources */,
+				52FC524A22AEE466000E82A3 /* RouteViewModel.swift in Sources */,
+				52FC522A22A706E9000E82A3 /* RoutesListViewController.swift in Sources */,
+				52FC524522AED398000E82A3 /* CommentModel.swift in Sources */,
+				31C3842622B100A20044DE07 /* MultiOptionalView.swift in Sources */,
+				31C3843922B1A0970044DE07 /* PickLocationsViewController.swift in Sources */,
+				52FC523922A8242C000E82A3 /* RouteDetailsViewController.swift in Sources */,
+				31C3843F22B1A2EA0044DE07 /* LocationTableViewCell+Layout.swift in Sources */,
+				31C3841422B05EDF0044DE07 /* LoginViewController+Layout.swift in Sources */,
+				31C3843D22B1A2DE0044DE07 /* LocationTableViewCell.swift in Sources */,
+				31C3842122B0E8B70044DE07 /* DialogView+Layout.swift in Sources */,
+				31C3844422B250590044DE07 /* FavoritesTableViewCell+Layout.swift in Sources */,
+				31C3843222B196D20044DE07 /* CreateRouteViewController.swift in Sources */,
+				31C3844622B2FAC00044DE07 /* CreateCommentModel.swift in Sources */,
+				31C3840922AED1320044DE07 /* AppService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3665F71522C1121C00DE18F2 /* Main.storyboard */ = {
+		318EEF2822954D3500CC9E25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3665F71622C1121C00DE18F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3665F71D22C1121E00DE18F2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3665F71E22C1121E00DE18F2 /* Base */,
+				318EEF2922954D3500CC9E25 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +581,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3665F72122C1121E00DE18F2 /* Debug */ = {
+		318EEF2C22954D3500CC9E25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -227,7 +642,7 @@
 			};
 			name = Debug;
 		};
-		3665F72222C1121E00DE18F2 /* Release */ = {
+		318EEF2D22954D3500CC9E25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,37 +697,45 @@
 			};
 			name = Release;
 		};
-		3665F72422C1121E00DE18F2 /* Debug */ = {
+		318EEF2F22954D3500CC9E25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC581797676506C46D1FA00 /* Pods-ExploreZagreb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JU3Z2879RM;
 				INFOPLIST_FILE = ExploreZagreb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.halle.zeljko.ExploreZagreb;
+				PRODUCT_BUNDLE_IDENTIFIER = "Zelena-Mrkva-ios.ExploreZagreb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		3665F72522C1121E00DE18F2 /* Release */ = {
+		318EEF3022954D3500CC9E25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1A382B66BA47EC09940A9D1 /* Pods-ExploreZagreb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JU3Z2879RM;
 				INFOPLIST_FILE = ExploreZagreb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.halle.zeljko.ExploreZagreb;
+				PRODUCT_BUNDLE_IDENTIFIER = "Zelena-Mrkva-ios.ExploreZagreb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,20 +744,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3665F70922C1121C00DE18F2 /* Build configuration list for PBXProject "ExploreZagreb" */ = {
+		318EEF1422954D3100CC9E25 /* Build configuration list for PBXProject "ExploreZagreb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3665F72122C1121E00DE18F2 /* Debug */,
-				3665F72222C1121E00DE18F2 /* Release */,
+				318EEF2C22954D3500CC9E25 /* Debug */,
+				318EEF2D22954D3500CC9E25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3665F72322C1121E00DE18F2 /* Build configuration list for PBXNativeTarget "ExploreZagreb" */ = {
+		318EEF2E22954D3500CC9E25 /* Build configuration list for PBXNativeTarget "ExploreZagreb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3665F72422C1121E00DE18F2 /* Debug */,
-				3665F72522C1121E00DE18F2 /* Release */,
+				318EEF2F22954D3500CC9E25 /* Debug */,
+				318EEF3022954D3500CC9E25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -342,17 +765,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3665F71822C1121C00DE18F2 /* ExploreZagreb.xcdatamodeld */ = {
+		318EEF2322954D3100CC9E25 /* ExploreZagreb.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3665F71922C1121C00DE18F2 /* ExploreZagreb.xcdatamodel */,
+				318EEF2422954D3100CC9E25 /* ExploreZagreb.xcdatamodel */,
 			);
-			currentVersion = 3665F71922C1121C00DE18F2 /* ExploreZagreb.xcdatamodel */;
+			currentVersion = 318EEF2422954D3100CC9E25 /* ExploreZagreb.xcdatamodel */;
 			path = ExploreZagreb.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 3665F70622C1121C00DE18F2 /* Project object */;
+	rootObject = 318EEF1122954D3100CC9E25 /* Project object */;
 }

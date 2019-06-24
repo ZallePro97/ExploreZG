@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>40682158007-3p2sl9enda705uoo6uar5j039l1e7dnk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.40682158007-3p2sl9enda705uoo6uar5j039l1e7dnk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD8OwhdB1JkKPxA-oh3x_XdJ0DVaiCd0L0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>40682158007</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Zelena-Mrkva.ExploreZagreb</string>
+	<key>PROJECT_ID</key>
+	<string>explorezagreb-fe357</string>
+	<key>STORAGE_BUCKET</key>
+	<string>explorezagreb-fe357.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:40682158007:ios:099fce68e6d51152</string>
+	<key>DATABASE_URL</key>
+	<string>https://explorezagreb-fe357.firebaseio.com</string>
+</dict>
+</plist>
