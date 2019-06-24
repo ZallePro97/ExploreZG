@@ -19,6 +19,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let regionInMeters: Double = 10000
     
     var quitButton: UIButton?
+    var nextLocationButton: UIButton?
+    var shortestPath: [LocationModel] = []
+    var routeNumber = 0
     
     var routeSelected: Bool? {
         didSet {
@@ -65,8 +68,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.autoPinEdgesToSuperviewEdges()
     }
     
+    @objc func nextLocationTapped(sender: UIButton) {
+        routeNumber += 1
+        if routeNumber >= shortestPath.count {
+            quitTapped(sender: quitButton ?? UIButton(frame: CGRect.zero))
+            return
+        }
+        
+        let nextLoc = shortestPath[routeNumber]
+        
+        mapView.setCenter(CLLocationCoordinate2D(latitude: CLLocationDegrees(nextLoc.latitude), longitude: CLLocationDegrees(nextLoc.longitude)), animated: true)
+    }
+    
     @objc func quitTapped(sender: UIButton) {
         print("Stisnuto")
+        shortestPath.removeAll()
+        routeNumber = 0
         DispatchQueue.main.async {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.removeOverlays(self.mapView.overlays)
@@ -85,6 +102,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 UIView.animate(withDuration: 0.2, animations: {viewWithTag.alpha = 0.0},
                                            completion: {(value: Bool) in
                                             viewWithTag.removeFromSuperview()
+                })
+                
+            }
+        }
+        
+        if let viewWithTag2 = self.mapView.viewWithTag(200) {
+            DispatchQueue.main.async {
+                
+                UIView.animate(withDuration: 0.2, animations: {viewWithTag2.alpha = 0.0},
+                               completion: {(value: Bool) in
+                                viewWithTag2.removeFromSuperview()
                 })
                 
             }
@@ -189,6 +217,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func setUIForRouteDirections() {
+        // gumb za prestanak rute
         quitButton = UIButton.newAutoLayout()
         quitButton?.tag = 100
         quitButton?.backgroundColor = .red
@@ -204,6 +233,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         quitButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 30)
         quitButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
         
+        // gumb za sljedecu lokaciju kad imam zeljenu rutu
+        nextLocationButton = UIButton.newAutoLayout()
+        nextLocationButton?.tag = 200
+        nextLocationButton?.backgroundColor = UIColor.flatBlue()
+        nextLocationButton?.setTitleColor(.white, for: .normal)
+        nextLocationButton?.setTitle("Next Location", for: .normal)
+        nextLocationButton?.layer.masksToBounds = true
+        nextLocationButton?.layer.cornerRadius = 10
+        nextLocationButton?.titleLabel?.adjustsFontSizeToFitWidth = true
+        nextLocationButton?.addTarget(self, action: #selector(nextLocationTapped), for: .touchUpInside)
+        nextLocationButton?.layer.zPosition = 1
+        mapView.addSubview(nextLocationButton ?? UIButton(frame: CGRect.zero))
+        nextLocationButton?.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
+        nextLocationButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 30)
+        
         // crtanje rute
         var currentLocation: CLLocation!
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
@@ -212,8 +256,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             currentLocation = locationManager.location
             
         }
-        
-        var shortestPath: [LocationModel] = []
         
         // pronalazak prve najblize lokacije od trenutne lokacije
         var min = 1000000
@@ -229,7 +271,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         if let close = close {
             mapView.setCenter(CLLocationCoordinate2D(latitude: CLLocationDegrees(close.latitude), longitude: CLLocationDegrees(close.longitude)), animated: true)
-            shortestPath.append(locations[0])
+            shortestPath.append(close)
         }
         
         var startLocation = shortestPath[0]
