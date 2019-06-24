@@ -60,6 +60,7 @@ class PinLocationDetailsViewController: UIViewController {
         self.view.addSubview(addressLabel)
         
         descriptionLabel.text = location.description
+        descriptionLabel.numberOfLines = 0
         descriptionLabel.textColor = .white
         descriptionLabel.backgroundColor = UIColor.seepSkyBlue()
         descriptionLabel.font = descriptionLabel.font.withSize(18)
