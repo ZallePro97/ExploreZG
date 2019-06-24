@@ -22,95 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var routeSelected: Bool? {
         didSet {
-            
-            quitButton = UIButton.newAutoLayout()
-            quitButton?.tag = 100
-            quitButton?.backgroundColor = .red
-            quitButton?.setTitleColor(.white, for: .normal)
-            quitButton?.setTitle("X", for: .normal)
-            quitButton?.layer.masksToBounds = true
-            quitButton?.layer.cornerRadius = 10
-            quitButton?.titleLabel?.adjustsFontSizeToFitWidth = true
-            quitButton?.titleLabel?.tintColor = UIColor.flatWhite()
-            quitButton?.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
-            quitButton?.layer.zPosition = 1
-            mapView.addSubview(quitButton ?? UIButton(frame: CGRect.zero))
-            quitButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 30)
-            quitButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
-            
-            // crtanje rute
-            var currentLocation: CLLocation!
-            if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-                CLLocationManager.authorizationStatus() ==  .authorizedAlways){
-                
-                currentLocation = locationManager.location
-                
-            }
-            
-            var shortestPath: [LocationModel] = []
-            
-            // pronalazak prve najblize lokacije od trenutne lokacije
-            var min = 1000000
-            var close: LocationModel?
-            
-            let curr = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-            for l in locations {
-                if Int(curr.distance(from: CLLocation(latitude: l.latitude, longitude: l.longitude))) < min {
-                    min = Int(curr.distance(from: CLLocation(latitude: l.latitude, longitude: l.longitude)))
-                    close = l
-                }
-            }
-            
-            if let close = close {
-                mapView.setCenter(CLLocationCoordinate2D(latitude: CLLocationDegrees(close.latitude), longitude: CLLocationDegrees(close.longitude)), animated: true)
-                shortestPath.append(locations[0])
-            }
-            
-            var startLocation = shortestPath[0]
-            while shortestPath.count != locations.count {
-                var min = 1000000
-                var locToAdd: LocationModel?
-                for loc in locations {
-                    let loc1 = CLLocation(latitude: startLocation.latitude, longitude: startLocation.longitude)
-                    let loc2 = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
-                    
-                    if !shortestPath.contains(loc) && Int(loc1.distance(from: loc2)) < min {
-                        min = Int(loc1.distance(from: loc2))
-                        locToAdd = loc
-                    }
-                }
-                print(locToAdd)
-                if let locToAdd = locToAdd {
-                    shortestPath.append(locToAdd)
-                    startLocation = locToAdd
-                }
-                
-            }
-            
-            for i in 1..<shortestPath.count {
-                let sourcePlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: shortestPath[i - 1].latitude, longitude: shortestPath[i - 1].longitude))
-                let destinationPlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: shortestPath[i].latitude, longitude: shortestPath[i].longitude))
-                
-                let directionRequest = MKDirections.Request()
-                directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-                directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
-                directionRequest.transportType = .walking
-                
-                let directions = MKDirections(request: directionRequest)
-                directions.calculate { (response, error) in
-                    guard let directionResonse = response else {
-                        if let error = error {
-                            print("we have error getting directions==\(error.localizedDescription)")
-                        }
-                        return
-                    }
-                    
-                    let route = directionResonse.routes[0]
-                    self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-                }
-                
-            }
-            
+            setUIForRouteDirections()
         }
     }
     
@@ -137,10 +49,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         setUI()
         checkLocationServices()
         
-//        let location = CLLocationCoordinate2D(latitude: 45.8150, longitude: 15.9819)
-        let loc = CLLocation(latitude: 45.8150, longitude: 15.9819)
-        let region = MKCoordinateRegion(center: loc.coordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
-        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+//        let loc = CLLocation(latitude: 45.8150, longitude: 15.9819)
+//        let region = MKCoordinateRegion(center: loc.coordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
+//        mapView.setRegion(mapView.regionThatFits(region), animated: true)
         
     }
     
@@ -275,6 +186,97 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    func setUIForRouteDirections() {
+        quitButton = UIButton.newAutoLayout()
+        quitButton?.tag = 100
+        quitButton?.backgroundColor = .red
+        quitButton?.setTitleColor(.white, for: .normal)
+        quitButton?.setTitle("X", for: .normal)
+        quitButton?.layer.masksToBounds = true
+        quitButton?.layer.cornerRadius = 10
+        quitButton?.titleLabel?.adjustsFontSizeToFitWidth = true
+        quitButton?.titleLabel?.tintColor = UIColor.flatWhite()
+        quitButton?.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+        quitButton?.layer.zPosition = 1
+        mapView.addSubview(quitButton ?? UIButton(frame: CGRect.zero))
+        quitButton?.autoPinEdge(toSuperviewEdge: .top, withInset: 30)
+        quitButton?.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
+        
+        // crtanje rute
+        var currentLocation: CLLocation!
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            currentLocation = locationManager.location
+            
+        }
+        
+        var shortestPath: [LocationModel] = []
+        
+        // pronalazak prve najblize lokacije od trenutne lokacije
+        var min = 1000000
+        var close: LocationModel?
+        
+        let curr = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+        for l in locations {
+            if Int(curr.distance(from: CLLocation(latitude: l.latitude, longitude: l.longitude))) < min {
+                min = Int(curr.distance(from: CLLocation(latitude: l.latitude, longitude: l.longitude)))
+                close = l
+            }
+        }
+        
+        if let close = close {
+            mapView.setCenter(CLLocationCoordinate2D(latitude: CLLocationDegrees(close.latitude), longitude: CLLocationDegrees(close.longitude)), animated: true)
+            shortestPath.append(locations[0])
+        }
+        
+        var startLocation = shortestPath[0]
+        while shortestPath.count != locations.count {
+            var min = 1000000
+            var locToAdd: LocationModel?
+            for loc in locations {
+                let loc1 = CLLocation(latitude: startLocation.latitude, longitude: startLocation.longitude)
+                let loc2 = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
+                
+                if !shortestPath.contains(loc) && Int(loc1.distance(from: loc2)) < min {
+                    min = Int(loc1.distance(from: loc2))
+                    locToAdd = loc
+                }
+            }
+            print(locToAdd)
+            if let locToAdd = locToAdd {
+                shortestPath.append(locToAdd)
+                startLocation = locToAdd
+            }
+            
+        }
+        
+        for i in 1..<shortestPath.count {
+            let sourcePlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: shortestPath[i - 1].latitude, longitude: shortestPath[i - 1].longitude))
+            let destinationPlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: shortestPath[i].latitude, longitude: shortestPath[i].longitude))
+            
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+            directionRequest.transportType = .walking
+            
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { (response, error) in
+                guard let directionResonse = response else {
+                    if let error = error {
+                        print("we have error getting directions==\(error.localizedDescription)")
+                    }
+                    return
+                }
+                
+                let route = directionResonse.routes[0]
+                self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+            }
+            
+        }
+        
     }
 
 }
