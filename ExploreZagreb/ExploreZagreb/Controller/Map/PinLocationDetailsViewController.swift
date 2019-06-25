@@ -31,7 +31,9 @@ class PinLocationDetailsViewController: UIViewController {
         image.clipsToBounds = true
         image.contentMode = .scaleToFill
         if let url = URL(string: location.picturePath) {
-            image.kf.setImage(with: url)
+            DispatchQueue.main.async {
+                self.image.kf.setImage(with: url)
+            }
         }
         self.view.addSubview(image)
         
