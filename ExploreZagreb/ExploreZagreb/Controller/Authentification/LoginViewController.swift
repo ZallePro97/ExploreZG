@@ -55,11 +55,11 @@ class LoginViewController: UIViewController {
         }
 
         //DODANO za prolaz autentifikacije
-        self.appRouter.setTabBarVCasRoot()
+//        self.appRouter.setTabBarVCasRoot()
         
         Auth.auth().signIn(withEmail: mail, password: password) { (authResult, error) in
             guard let user = authResult?.user else {
-                self.showDialog(withMessage: "Error happned!\nPlease try again.")
+                self.showDialog(withMessage: "Error happened!\nPlease try again.")
                 return
             }
             
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
                 do {
                     try Auth.auth().signOut()
                 } catch {
-                    self.showDialog(withMessage: "Error happned!\nPlease try again.")
+                    self.showDialog(withMessage: "Error happened!\nPlease try again.")
                 }
             }
         }
